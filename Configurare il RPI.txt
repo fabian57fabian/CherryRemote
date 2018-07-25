@@ -1,0 +1,23 @@
+[Configurazione del raspberry appena installato raspbian sulla microSD: comandi]
+
+sudo apt update
+sudo apt upgrade
+sudo apt install apache2
+sudo chown -R pi:www-data /var/www/html/
+sudo chmod -R 770 /var/www/html/
+wget -O check_apache.html http://127.0.0.1
+cat ./check_apache.html
+sudo apt install php php-mbstring
+sudo rm /var/www/html/index.html
+sudo apt install mysql-server php-mysql
+
+[gestire accesso a DB)]
+sudo mysql --user=root
+CREATE USER 'client1'@'localhost' IDENTIFIED BY 'client1password';
+GRANT ALL PRIVILEGES ON *.* TO 'client1'@'localhost';
+FLUSH PRIVILEGES;
+
+CREATE DATABASE devices_commands;
+use devices_commands;
+
+[inserire le query SQL dal file Create_tables.sql. Modificare in caso gli indirizzi IP dei controllori NodeMCU]

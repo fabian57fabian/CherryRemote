@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Cherry Remote</title>
+    <meta name="keywords" content="remote, arduino, project, diy"/>
+    <meta name="description" content="Remote control on IR over wifi"/>
+    <link href="css/plugin_style.css" rel="stylesheet" type="text/css">
+    <script>
+        if (screen && screen.width <= 480) {
+            document.write('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />');
+        }
+    </script>
+
+    <script type="text/javascript" src="scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="scripts/jquery.remote.plugin.js"></script>
+    <script type="text/javascript" src="scripts/remote_plugin_init.js"></script>
+    <link rel="icon" href="icons/icon_remote.png">
+
+</head>
+<body class="mainpage">
+<div class="list">
+    <form class="dropDownRemotes">
+        <button type="submit" id="cancelRemoteButton" class="cancel"/>
+        </button>
+        <select name="remotes" id="remotes_list" class="listbox select_ios"></select>
+        <button type="submit" id="addRemoteButton" class="addRemoteButton"/>
+        </button>
+    </form>
+</div>
+<div class="remote_plugin">
+
+</div>
+</body>
+</html>
