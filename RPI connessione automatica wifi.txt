@@ -1,0 +1,50 @@
+[Per collegarsi automaticamente ad una wifi modificare i seguenti file:]
+
+
+[1. File interfaces:]
+sudo nano /etc/network/interfaces
+[incollare il seguente contenuto:]
+
+# interfaces(5) file used by ifup(8) and ifdown(8)
+
+# Please note that this file is written to be used with dhcpcd
+
+# For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
+
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+
+allow-hotplug eth0
+iface eth0 inet dhcp
+
+allow-hotplug wlan0
+iface wlan0 inet manual
+   wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+
+iface home inet dhcp
+iface work inet dhcp
+iface default inet dhcp
+
+
+
+[2. File wpa_supplicant.conf]
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+[incollare il seguente contenuto:]
+
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+        ssid="primary_wifi_ssid"
+        psk="primary_wifi_ssidpassword"
+        id_str="work"
+        proto=RSN
+        auth_alg=OPEN
+}
+network={
+        ssid="secondary_wifi_ssid"
+        psk="secondary_wifi_ssidpassword"
+        id_str="home"
+        proto=RSN
+        auth_alg=OPEN
+}
