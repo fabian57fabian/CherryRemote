@@ -12,4 +12,4 @@ Check out the [video](https://youtu.be/VEHPQiOjbc4):
 
 [![Youtube video](https://img.youtube.com/vi/VEHPQiOjbc4/hqdefault.jpg)](https://youtu.be/VEHPQiOjbc4)
 
-Authors: [Fabian Greavu](https://github.com/fabian57fabian), [Silvia Raggi](https://github.com/silvia-r95)
+Authors: [Fabian Greavu](https://github.com/fabian57fabian), [Silvia Raggi](https://github.com/silviaraggi)
